@@ -1,82 +1,325 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Evolución de la Gestión de la Calidad</title>
+  <title>Evolución de la Gestión de la Calidad</title>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/sky.css">
 
-<style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 
-.reveal h1, .reveal h2{
-text-align:center;
+  <style>
+/* ==========================
+   Ajuste general de slides
+========================== */
+
+.reveal .slides section{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding-top:10px;
+  height:100%;
 }
 
-.reveal img{
-display:block;
-margin:auto;
-max-height:65vh;
+.reveal .slides section h2{
+  text-align:center;
+  margin-top:0;
+  margin-bottom:10px;
+  white-space:nowrap;
 }
 
-.reveal p{
-text-align:center;
-font-size:1.3em;
+/* ==========================
+   Portada
+========================== */
+
+.slide-portada h2{
+  white-space: normal;
+  font-size: 1.8em;
+  line-height: 1.2em;
 }
 
+.slide-portada .contenedor-portada{
+  position:relative;
+  width:100%;
+}
+
+.slide-portada .imagen-portada{
+  max-height:500px;
+  width:auto;
+  border-radius:10px;
+}
+
+.slide-portada .texto-portada{
+  position:absolute;
+  bottom:91%;
+  left:0;
+  width:100%;
+  padding:10px 0;
+  text-align:center;
+  color:maroon;
+  font-size:1.0em;
+}
+
+/* ==========================
+   Contenedores de contenido
+========================== */
+
+.contenedor{
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.contenedor img{
+  flex-shrink:0;
+  max-height:420px;
+  width:auto;
+  border-radius:10px;
+}
+
+.texto{
+  flex:1;
+  max-width:600px;
+
+  text-align:left;
+  font-size:0.85em;
+  line-height:1.4em;
+}
+
+/* ==========================
+   Listas
+========================== */
+
+ul{
+  padding-left:1.2em;
+}
+
+li.fragment{
+  margin-bottom:0.3em;
+}
+
+/* ==========================
+   Iconos FontAwesome
+========================== */
+
+section h2 i{
+  margin-right:0.5em;
+  color:#444;
+}
+
+/* ==========================
+   Navegación estilo app
+========================== */
+
+.reveal .controls{
+  bottom:25px;
+  left:50%;
+  right:auto;
+  transform:translateX(-50%);
+  display:flex;
+  gap:20px;
+}
+
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-down{
+  display:none;
+}
+
+.reveal .controls button{
+  background:rgba(127,255,255,0.9);
+  border-radius:50%;
+
+  width:70px;
+  height:70px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+
+  transition:all 0.25s ease;
+}
+
+.reveal .controls button svg{
+  width:30px;
+  height:30px;
+  color:#333;
+}
+
+.reveal .controls button:hover{
+  background:#1a73e8;
+  transform:scale(1.15);
+}
+
+.reveal .controls button:hover svg{
+  color:white;
+}
+
+.reveal .controls button:active{
+  transform:scale(0.95);
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media (max-width:1200px){
+  .contenedor img{
+    max-height:360px;
+  }
+
+  .texto{
+    max-width:500px;
+  }
+}
+
+@media (max-width:768px){
+  .contenedor{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .contenedor img{
+    max-height:300px;
+    margin-bottom:15px;
+  }
+
+  .texto{
+    max-width:90%;
+    text-align:center;
+  }
+}
 </style>
+
 </head>
 
 <body>
 
-<div class="reveal">
-<div class="slides">
+  <div class="reveal">
+    <div class="slides">
 
+      <!-- PORTADA -->
+      <section class="slide-portada">
+        <h2>Evolución de la Gestión de la Calidad</h2>
+        <div class="contenedor-portada">
+          <img src="timeline-calidad.png" class="imagen-portada" alt="Timeline calidad" title="Timeline calidad">
+          <p class="texto-portada">De la inspección al mejoramiento continuo</p>
+        </div>
+      </section>
+
+      <!-- CONTROL DE CALIDAD -->
+      <section>
+        <h2><i class="fas fa-magnifying-glass"></i> Control de Calidad (1900–1940)</h2>
+        <div class="contenedor">
+          <img src="inspeccion-industrial.png" alt="Inspección industrial" title="Inspección industrial">
+          <div class="texto">
+            <p>Se inspeccionaban los productos al final del proceso.</p>
+            <ul>
+              <li class="fragment">Detectar defectos</li>
+              <li class="fragment">Eliminar productos no conformes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- DEMING -->
+      <section>
+        <h2><i class="fas fa-chart-line"></i> W. Edwards Deming</h2>
+        <div class="contenedor">
+          <img src="pdca-deming.png" alt="Ciclo PDCA" title="Ciclo PDCA">
+          <div class="texto">
+            <p>Calidad basada en procesos y mejora continua.</p>
+            <ul>
+              <li class="fragment">Planificar, Hacer, Verificar, Actuar (PDCA)</li>
+              <li class="fragment">Prevención de errores</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- JURAN -->
+      <section>
+        <h2><i class="fas fa-project-diagram"></i> Joseph Juran</h2>
+        <div class="contenedor">
+          <img src="trilogia-juran.png" alt="Trilogía de Juran" title="Trilogía de Juran">
+          <div class="texto">
+            <p>La calidad se gestiona mediante su trilogía:</p>
+            <ul>
+              <li class="fragment">Planificación de la calidad</li>
+              <li class="fragment">Control de la calidad</li>
+              <li class="fragment">Mejora de la calidad</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ISHIKAWA -->
+      <section>
+        <h2><i class="fas fa-fish"></i> Kaoru Ishikawa</h2>
+        <div class="contenedor">
+          <img src="diagrama-ishikawa.png" alt="Diagrama Ishikawa" title="Diagrama Ishikawa">
+          <div class="texto">
+            <p>Analiza las causas de los problemas y promueve la participación.</p>
+            <ul>
+              <li class="fragment">Diagrama causa-efecto (espina de pescado)</li>
+              <li class="fragment">Herramientas de calidad para todos</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONCLUSIÓN -->
 <section>
-<h1>Evolución de la Gestión de la Calidad</h1>
-<p>De la inspección al mejoramiento continuo</p>
-<img src="timeline-calidad.jpg">
+  <h2>Impacto Actual</h2>
+
+  <div class="contenedor">
+    
+    <img src="iso9001-calidad.png" alt="Sistema moderno de calidad" title="Sistema moderno de calidad">
+
+    <div class="texto">
+      <p>
+        Las ideas de Deming, Juran e Ishikawa influyen hoy en los sistemas modernos
+        de gestión de calidad como ISO 9001.
+      </p>
+
+      <ul>
+        <li class="fragment">Gestión basada en procesos</li>
+        <li class="fragment">Mejora continua</li>
+        <li class="fragment">Satisfacción del cliente</li>
+      </ul>
+    </div>
+
+  </div>
 </section>
 
-<section>
-<h2>Control de Calidad (1900–1940)</h2>
-<p>Inspección al final del proceso</p>
-<img src="inspeccion-industrial.jpg">
-</section>
+    </div>
+  </div>
 
-<section>
-<h2>W. Edwards Deming</h2>
-<p>Mejora continua – Ciclo PDCA</p>
-<img src="pdca-deming.png">
-</section>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
 
-<section>
-<h2>Joseph Juran</h2>
-<p>Trilogía de la calidad</p>
-<img src="trilogia-juran.png">
-</section>
-
-<section>
-<h2>Kaoru Ishikawa</h2>
-<p>Análisis de causas de problemas</p>
-<img src="diagrama-ishikawa.png">
-</section>
-
-<section>
-<h2>Impacto Actual</h2>
-<p>Sistemas modernos de gestión de calidad</p>
-<img src="iso9001-calidad.png">
-</section>
-
-</div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-<script>
-Reveal.initialize();
-</script>
+  <script>
+    Reveal.initialize({
+      width:1280,
+      height:720,
+      margin:0.04,
+      minScale:0.2,
+      maxScale:1.5,
+      transition:'slide',
+      transitionSpeed:'slow',
+      controls:true,
+      progress:true,
+      center:false
+    });
+  </script>          
 
 </body>
+
 </html>
